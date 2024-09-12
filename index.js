@@ -5,6 +5,7 @@ const authRouter = require("./routes/Auth/authRoute");
 const userRouter = require("./routes/ProfileUpdate/Profileupdate");
 const StockpostRouter = require("./routes/postmanagement/postManagement");
 const postModal = require("./models/StocksPost.modal");
+const profileRouter = require("./routes/ProfileUpdate/Profileupdate");
 
 const server = express();
 const port = process.env.PORT || 4400;
@@ -16,6 +17,7 @@ server.use(express.json());
 server.use("/auth", authRouter);
 server.use('/user', userRouter);
 server.use('/Stockspost', StockpostRouter);
+server.use('/profileupdate',profileRouter)
 
 // Endpoint to retrieve posts with pagination, filtering, and sorting
 server.get('/posts', async (req, res) => {
